@@ -13,6 +13,10 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR})
 set(CMAKE_SYSTEM_NAME  Generic)
 set(CMAKE_SYSTEM_PROCESSOR ARM)
 
+if(NOT DEFINED SPECIFIC_CPU_FLAGS)
+    #If not specified, don't crash
+    set(SPECIFIC_CPU_FLAGS "")
+endif()
 #---------------------------------------------------------------------------------------
 # Set toolchain paths
 #---------------------------------------------------------------------------------------
@@ -58,7 +62,7 @@ set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 # -mabi=aapcs           Defines enums to be a variable sized type.
 set(OBJECT_GEN_FLAGS "-O0 -mthumb -fno-builtin -Wall -ffunction-sections -fdata-sections -fomit-frame-pointer -mabi=aapcs")
 
-set(CMAKE_C_FLAGS   "${OBJECT_GEN_FLAGS} -std=gnu99 " CACHE INTERNAL "C Compiler options")
+set(CMAKE_C_FLAGS   "${OBJECT_GEN_FLAGS} -std=gnu99 ${SPECIFIC_CPU_FLAGS}" CACHE INTERNAL "C Compiler options")
 set(CMAKE_CXX_FLAGS "${OBJECT_GEN_FLAGS} -std=c++11 " CACHE INTERNAL "C++ Compiler options")
 set(CMAKE_ASM_FLAGS "${OBJECT_GEN_FLAGS} -x assembler-with-cpp " CACHE INTERNAL "ASM Compiler options")
 
