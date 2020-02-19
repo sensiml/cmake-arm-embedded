@@ -18,7 +18,7 @@ ${QUICKAI_SDK_ROOT}/Libraries/SensorFramework/drivers/M4/LSM6DSL
 ${QUICKAI_SDK_ROOT}/Libraries/SensorFramework/inc
 ${QUICKAI_SDK_ROOT}/Libraries/SensorFramework/drivers/inc
 ${QUICKAI_SDK_ROOT}/Libraries/SensorFramework/test/inc
-#${QUICKAI_SDK_ROOT}/Libraries/Utils/inc
+${QUICKAI_SDK_ROOT}/Libraries/Utils/inc
 ${QUICKAI_SDK_ROOT}/Libraries/FreeRTOS_FAT/include
 ${QUICKAI_SDK_ROOT}/Libraries/FreeRTOS_FAT/portable/QL
 ${QUICKAI_SDK_ROOT}/Libraries/FreeRTOS_FAT
@@ -37,8 +37,8 @@ ${QUICKAI_SDK_ROOT}/Tasks/BLE/inc
 ${QUICKAI_SDK_ROOT}/App/${QUICKAI_APP_NAME}/sensiml/inc
 ${QUICKAI_SDK_ROOT}/App/${QUICKAI_APP_NAME}/sensiml/
 ${QUICKAI_SDK_ROOT}/Libraries/DatablockManager/inc
-${QUICKAI_SDK_ROOT}/Tasks/DatablockProcessor/inc)
-#${QUICKAI_SDK_ROOT}/QAI-Common/inc)
+${QUICKAI_SDK_ROOT}/Tasks/DatablockProcessor/inc
+${QUICKAI_SDK_ROOT}/QAI-Common/inc)
 
 list(APPEND DEVICE_MACROS "-D__FPU_USED=1"
     "-D__FPU_USED=1"
